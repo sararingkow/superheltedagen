@@ -2,6 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
+@layer base {
+  /* Display Text */
+  .display {
+    @apply font-satoshi-black text-gray-950 text-display-mobile;
+  }
+  @screen md {
+    .display {
+      @apply text-display-desktop;
+    }
+  }
 
+  /* Headings */
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-satoshi-bold text-gray-950;
+  }
+  h1 {
+    @apply text-h1-mobile;
+  }
+  h2 {
+    @apply text-h2-mobile;
+  }
+  h3 {
+    @apply text-h3-mobile;
+  }
+  h4 {
+    @apply text-h4-mobile;
+  }
+  @screen md {
+    h1 {
+      @apply text-h1-desktop;
+    }
+    h2 {
+      @apply text-h2-desktop;
+    }
+    h3 {
+      @apply text-h3-desktop;
+    }
+    h4 {
+      @apply text-h4-desktop;
+    }
+  }
+
+  /* Paragraph & Body Text */
+  p {
+    @apply font-satoshi-regular text-gray-950 text-p-mobile;
+  }
+  @screen md {
+    p,
+    a {
+      @apply text-p-desktop;
+    }
+  }
+
+  /* Button Text */
+  .btn_container a {
+    @apply font-satoshi-medium text-gray-50 text-[15px];
+  }
 }
