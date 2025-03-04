@@ -4,12 +4,66 @@ import Button from "../components/Button.astro";
 ---
 
 <MainLayout title="Superheltedagen">
-  <section class="top-section">
-    <div class="hero-section">
-      <div class="flex flex-row items-center gap-4">
-        <img src="/images/hero_element.webp" alt="hero-element for superheltedagen" />
-        <img src="/images/superhero.webp" alt="superhelte-dreng" />
+  <section class="top-section grid grid-cols-12 md:mt-desktop-top mt-mobil-top md:mb-desktop-bottom mb-mobil-bottom">
+    <div class="hero-section col-span-12 flex flex-row items-center justify-center">
+      <div class="md:pt-0 pt-4 flex md:flex-row flex-col md:items-start items-center md:gap-32 gap-24">
+        <img src="/images/hero_element.webp" alt="hero-element for superheltedagen" class="w-[400px] md:w-[700px]" />
+        <img src="/images/superhero.webp" alt="superhelte-dreng" class="w-[250px] md:w-[350px]" />
+      </div>
+    </div>
+    <div class="absolute bottom-[3%] md:bottom-[2%] w-full flex justify-center z-[30]">
+      <a href="#about">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.8"
+          stroke="currentColor"
+          class="arrow float w-8 h-8 sm:w-12 sm:h-12 text-gray-50 hover:text-turquoise-300 transition duration-300 ease-in-out"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+  <div class="line1 col-span-12">
+    <img src="/images/line.webp" alt="sektionslinje" class="w-full h-[10px]" />
+  </div>
+  <section class="middle-section h-full p-8 bg-turquoise-300 grid grid-cols-12 md:mb-desktop-bottom mb-mobil-bottom">
+    <div class="col-span-12 flex md:flex-row flex-col items-center justify-center">
+      <img
+        src="/images/section1_image.webp"
+        alt="billede til første tekst-sektion"
+        class="rounded-full w-[300px] h-[300px] md:w-[400px] md:h-[400px] object-cover"
+      />
+      <div class="p-8 flex flex-col md:ml-10">
+        <h2 class="text-h3-mobile md:text-h3-desktop md:pb-8 pb-4">
+          Bliv en del af Superheltedagen, hvor vi samler ind til børn med livstruende sygdomme som kræft og hjertesygdomme
+        </h2>
+        <p>
+          Den 28. april 2025 er det international superheltedag – og det fejrer vi selvfølgelig med Superheltedagen, hvor hele Danmark er inviteret
+          med. <br class="md:block hidden" />
+          Superheltedagen er en årlig indsamlingsdag, hvor alle midler går direkte til Legeheltene og Kreaheltenes arbejde for børn med livstruende sygdomme
+          i Danmark.
+        </p>
       </div>
     </div>
   </section>
 </MainLayout>
+
+<style>
+  @keyframes float {
+    0% {
+      transform: translatey(0);
+    }
+    50% {
+      transform: translatey(-10px);
+    }
+    100% {
+      transform: translatey(0);
+    }
+  }
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+</style>

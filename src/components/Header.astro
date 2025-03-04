@@ -2,43 +2,65 @@
 import Button from "../components/Button.astro";
 ---
 
-<div x-data="{ showmenu: false }" class="p-4 z-10 w-full bg-transparent backdrop-blur-sm">
+<div x-data="{ showmenu: false }" class="fixed p-4 z-10 w-full bg-transparent backdrop-blur-sm">
   <div id="navbar" class="flex flex-row items-center gap-gap max-w-8xl mx-auto pr-4 pl-4 pt-2 pb-2">
     <!-- Logo (hidden on mobile) -->
     <div class="hidden lg:block">
       <a href="#logo"><img src="/images/logo.webp" alt="logo for legeheltene" class="h-12" /></a>
     </div>
 
-    <!-- Desktop menu (hidden on mobile) -->
-    <nav id="desktopmenu" class="hidden lg:block">
-      <ul class="flex flex-row gap-5">
-        <li><a href="#" class="text-gray-50 hover:text-turquoise-300 hover:underline transition duration-300 ease-in-out">Helteinitiativer</a></li>
-        <li><a href="#" class="text-gray-50 hover:text-turquoise-300 hover:underline transition duration-300 ease-in-out">Find os</a></li>
-        <li><a href="#" class="text-gray-50 hover:text-turquoise-300 hover:underline transition duration-300 ease-in-out">Om os</a></li>
-        <li>
-          <a
-            href="https://børneulykkesfonden.dk/forside"
-            target="_blank"
-            class="text-gray-50 hover:text-turquoise-300 hover:underline transition duration-300 ease-in-out">Gå til Børneulykkesfonden</a
-          >
-        </li>
-      </ul>
-    </nav>
+    <!-- Right-side container: Link + Buttons -->
+    <div class="flex items-center ml-auto gap-12">
+      <!-- Desktop link (aligned next to buttons) -->
+      <nav id="desktopmenu" class="hidden lg:block">
+        <ul class="flex">
+          <li>
+            <a
+              href="https://børneulykkesfonden.dk/forside"
+              target="_blank"
+              class="text-gray-50 hover:text-turquoise-300 hover:underline transition duration-300 ease-in-out">Gå til Børneulykkesfonden</a
+            >
+          </li>
+        </ul>
+      </nav>
 
-    <!-- Buttons (aligned to the right, hidden on mobile) -->
-    <div class="btn_container ml-auto hidden lg:flex gap-4">
-      <a href="https://form.jotform.com/243123026664349" target="_blank">
-        <Button variant="primary" size="small">Tilmeld din virksomhed</Button>
-      </a>
-      <a href="https://shop.børneulykkesfonden.dk/products/heltekapper-m-maske-superheltebeviser?variant=54862502396277" target="_blank">
-        <Button variant="primary" size="small">Superhelteshop</Button></a
-      >
+      <!-- Buttons (aligned right) -->
+      <div class="btn_container hidden lg:flex gap-4">
+        <a href="https://form.jotform.com/243123026664349" target="_blank">
+          <Button variant="primary" size="small">Tilmeld din virksomhed</Button>
+        </a>
+        <a href="https://shop.børneulykkesfonden.dk/products/heltekapper-m-maske-superheltebeviser?variant=54862502396277" target="_blank">
+          <Button variant="primary" size="small">Superhelteshop</Button>
+        </a>
+      </div>
     </div>
 
     <!-- Burger menu (only visible on mobile) -->
-    <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = ! showmenu">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+    <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = !showmenu">
+      <!-- Hamburger icon -->
+      <svg
+        x-show="!showmenu"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-8 text-gray-50 hover:text-turquoise-300 transition duration-300 ease-in-out"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
+      </svg>
+
+      <!-- Close icon (Cross) -->
+      <svg
+        x-show="showmenu"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-8 text-gray-50 hover:text-turquoise-300 transition duration-300 ease-in-out"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
       </svg>
     </button>
   </div>
@@ -46,17 +68,16 @@ import Button from "../components/Button.astro";
   <!-- Mobile menu -->
   <nav
     id="mobilmenu"
-    class="flex flex-col content-center pt-4"
+    class="flex flex-col items-center content-center"
     x-show="showmenu"
     x-transition
     x-on:click="showmenu = false"
     x-on:click.outside="showmenu = false"
   >
     <ul>
-      <li class="text-center py-2 border-y-2"><a href="#">Link 1</a></li>
-      <li class="text-center py-2 border-b-2"><a href="#">Link 2</a></li>
-      <li class="text-center py-2 border-b-2"><a href="#">Link 3</a></li>
-      <li class="text-center py-2 border-b-2"><a href="#">Link 4</a></li>
+      <li class="text-gray-50 py-2 border-b border-gray-50">
+        <a href="https://børneulykkesfonden.dk/forside" target="_blank">Gå til Børneulykkesfonden</a>
+      </li>
     </ul>
   </nav>
 </div>

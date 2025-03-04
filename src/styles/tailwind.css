@@ -5,7 +5,7 @@
 @layer base {
   /* Display Text */
   .display {
-    @apply font-satoshi-black text-gray-950 text-display-mobile;
+    @apply font-satoshi-black text-turquoise-800 text-display-mobile;
   }
   @screen md {
     .display {
@@ -18,7 +18,7 @@
   h2,
   h3,
   h4 {
-    @apply font-satoshi-bold text-gray-950;
+    @apply font-satoshi-bold text-turquoise-800;
   }
   h1 {
     @apply text-h1-mobile;
@@ -49,7 +49,7 @@
 
   /* Paragraph & Body Text */
   p {
-    @apply font-satoshi-regular text-gray-950 text-p-mobile;
+    @apply font-satoshi-regular text-turquoise-800 text-p-mobile;
   }
   @screen md {
     p,
