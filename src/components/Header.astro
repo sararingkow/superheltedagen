@@ -2,7 +2,7 @@
 import Button from "../components/Button.astro";
 ---
 
-<div x-data="{ showmenu: false }" class="fixed p-4 z-10 w-full bg-transparent backdrop-blur-sm">
+<div x-data="{ showmenu: false }" class="header fixed p-4 z-10 w-full backdrop-blur-sm">
   <div id="navbar" class="flex flex-row items-center gap-gap max-w-8xl mx-auto pr-4 pl-4 pt-2 pb-2">
     <!-- Logo (hidden on mobile) -->
     <div class="hidden lg:block">
@@ -81,3 +81,10 @@ import Button from "../components/Button.astro";
     </ul>
   </nav>
 </div>
+
+<style>
+  .header {
+    background: rgb(60, 148, 158);
+    background: linear-gradient(-90deg, rgba(60, 148, 158, 1) 0%, rgba(52, 122, 134, 1) 50%, rgba(52, 122, 134, 1) 83%);
+  }
+</style>
