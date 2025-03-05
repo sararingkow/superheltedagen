@@ -2,8 +2,8 @@
 import Button from "../components/Button.astro";
 ---
 
-<div x-data="{ showmenu: false }" class="header fixed p-4 z-10 w-full backdrop-blur-sm">
-  <div id="navbar" class="flex flex-row items-center gap-gap max-w-8xl mx-auto pr-4 pl-4 pt-2 pb-2">
+<div x-data="{ showmenu: false }" class="z-50 header fixed mx-auto w-full pt-4 pb-4 md:py-4 md:px-0 px-6 backdrop-blur-sm">
+  <div id="navbar" class="flex flex-row items-center gap-gap md:px-12 mx-auto pt-2 pb-2">
     <!-- Logo (hidden on mobile) -->
     <div class="hidden lg:block">
       <a href="#logo"><img src="/images/logo.webp" alt="logo for legeheltene" class="h-12" /></a>
@@ -70,15 +70,28 @@ import Button from "../components/Button.astro";
     id="mobilmenu"
     class="flex flex-col items-center content-center"
     x-show="showmenu"
-    x-transition
-    x-on:click="showmenu = false"
+    x-transition.opacity
+    x-cloak
     x-on:click.outside="showmenu = false"
   >
+    <img src="/images/logo.webp" alt="logo for legeheltene" class="h-16 pb-4 md:pb-0" />
     <ul>
-      <li class="text-gray-50 py-2 border-b border-gray-50">
-        <a href="https://børneulykkesfonden.dk/forside" target="_blank">Gå til Børneulykkesfonden</a>
+      <li class="text-gray-50 py-2 border-b border-turquoise-400 border-opacity-50">
+        <a
+          href="https://børneulykkesfonden.dk/forside"
+          target="_blank"
+          class="hover:text-turquoise-300 hover:underline transition duration-300 ease-in-out">Gå til Børneulykkesfonden</a
+        >
       </li>
     </ul>
+    <div class="btn_container lg:flex gap-4 pt-8 md:pt-0">
+      <a href="https://form.jotform.com/243123026664349" target="_blank">
+        <Button variant="primary" size="small">Tilmeld din virksomhed</Button>
+      </a>
+      <a href="https://shop.børneulykkesfonden.dk/products/heltekapper-m-maske-superheltebeviser?variant=54862502396277" target="_blank">
+        <Button variant="primary" size="small">Superhelteshop</Button>
+      </a>
+    </div>
   </nav>
 </div>
 
@@ -86,5 +99,9 @@ import Button from "../components/Button.astro";
   .header {
     background: rgb(60, 148, 158);
     background: linear-gradient(-90deg, rgba(60, 148, 158, 1) 0%, rgba(52, 122, 134, 1) 50%, rgba(52, 122, 134, 1) 83%);
+  }
+
+  [x-cloak] {
+    display: none !important;
   }
 </style>

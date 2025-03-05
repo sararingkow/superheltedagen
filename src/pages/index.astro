@@ -5,13 +5,13 @@ import Button from "../components/Button.astro";
 
 <MainLayout title="Superheltedagen">
   <section class="top-section grid grid-cols-12 md:mt-desktop-top mt-mobil-top md:mb-desktop-bottom mb-mobil-bottom">
-    <div class="hero-section col-span-12 flex flex-row items-center justify-center">
-      <div class="md:pt-8 pt-4 flex md:flex-row flex-col md:items-start items-center md:gap-32 gap-24">
-        <img src="/images/hero_element.webp" alt="hero-element for superheltedagen" class="w-[400px] md:w-[700px]" />
-        <img src="/images/superhero.webp" alt="superhelte-dreng" class="w-[250px] md:w-[350px]" />
+    <div class="hero-section col-span-12 flex flex-row items-center justify-center content-center">
+      <div class="md:pt-8 pt-4 flex md:flex-row flex-col md:items-start items-center md:gap-32 gap-16">
+        <img src="/images/hero_element.webp" alt="hero-element for superheltedagen" class="md:pt-12 w-[400px] md:w-[700px]" />
+        <img src="/images/superhero.webp" alt="superhelte-dreng" class="w-[250px] md:w-[400px]" />
       </div>
     </div>
-    <div class="absolute bottom-[3%] md:bottom-[1%] w-full flex justify-center z-[30]">
+    <div class="absolute bottom-[-20%] md:bottom-[-10%] w-full flex justify-center z-[30]">
       <a href="#about">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -36,21 +36,21 @@ import Button from "../components/Button.astro";
         alt="billede til første tekst-sektion"
         class="rounded-full w-[300px] h-[300px] md:w-[400px] md:h-[400px] object-cover"
       />
-      <div class="p-8 flex flex-col md:ml-10">
-        <h2 class="text-h3-mobile md:text-h3-desktop md:pb-8 pb-4">
+      <div class="flex flex-col md:ml-10">
+        <h2 class="text-h3-mobile md:text-h3-desktop md:pb-8 pb-4 md:pt-0 pt-12">
           Bliv en del af Superheltedagen, hvor vi samler ind til børn med livstruende sygdomme som kræft og hjertesygdomme
         </h2>
         <p>
-          Den 28. april 2025 er det international superheltedag – og det fejrer vi selvfølgelig med Superheltedagen, hvor hele Danmark er inviteret
-          med. <br class="md:block hidden" />
+          Den 28. april 2025 er det international superheltedag&mdash; og det fejrer vi selvfølgelig med Superheltedagen, hvor hele Danmark er
+          inviteret med. <br class="md:block hidden" />
           Superheltedagen er en årlig indsamlingsdag, hvor alle midler går direkte til Legeheltene og Kreaheltenes arbejde for børn med livstruende sygdomme
           i Danmark.
         </p>
       </div>
     </div>
   </section>
-  <section class="slider-section grid grid-cols-12">
-    <h2 class="pl-8 md:text-left col-span-12 text-h3-mobile md:text-h3-desktop md:pb-0 pb-4 md:pt-12 pt-8">Deltager i Superheltedagen 2025</h2>
+  <section class="slider-section mx-auto grid grid-cols-12">
+    <h2 class="pl-8 md:text-left col-span-12 text-h3-mobile md:text-h3-desktop md:pb-2 pb-4 md:pt-12 pt-8">Deltager i Superheltedagen 2025</h2>
     <div class="slider col-span-12">
       <div class="slide-track col-span-12">
         <div class="slide"><img src="/images/br.webp" alt="" /></div>
@@ -158,46 +158,126 @@ import Button from "../components/Button.astro";
       </iframe>
     </div>
   </section>
-</MainLayout>
 
-<style>
-  @keyframes float {
-    0% {
-      transform: translatey(0);
+  <section class="charity-section mx-auto md:px-12 px-8 md:py-12 py-8 bg-turquoise-300 grid grid-cols-12">
+    <div class="col-span-12 grid md:grid-cols-2 grid-cols-1 md:gap-20 gap-16 items-center justify-center">
+      <div>
+        <h2 class="md:pb-8 pb-4 max-w-[25rem]">Det går midlerne fra Superheltedagen 2025 til</h2>
+        <h3>Flere børn, som er ramt af livstruende sygdom, der skal have besøg af Legeheltene og Kreaheltene</h3>
+        <div class="btn_container md:pt-12 pt-10">
+          <a href="https://børneulykkesfonden.dk/heltene/kreaheltene/heltekaravanen" target="_blank">
+            <Button variant="primary" size="large">Læs mere om Heltekaravanen</Button>
+          </a>
+        </div>
+      </div>
+      <div>
+        <p>
+          Det er ubærligt at tænke på, at nogen børn skal herfra, før de har levet deres liv fuldt ud. Derfor afholder vi indsamlingsinitiativet
+          Superheltedagen d. 28. april 2025, så flere børn med livstruende eller uhelbredelig sygdom kan få besøg af en helt i eget hjem. <br /><br />
+          Når du fejrer Superheltedagen med os, støtter du vores projekt Heltekaravanen. Heltekaravanen er et tilbud til børn, der er tilknyttet palliationen,
+          og deres familier, hvor de får besøg af Legeheltene og Kreaheltene i deres eget hjem. Legeheltene og Kreaheltene hjælper børnene og deres familierne
+          i en sårbar tid og giver både barnet, forældre og eventuelle søskende gode minder sammen&mdash; alt fra sanselege til mindekasser og gipsaftryk.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="support-section mx-auto md:px-12 px-8 md:py-12 py-8 grid grid-cols-12">
+    <div class="col-span-12 grid md:grid-cols-4 grid-cols-1 md:gap-10 gap-16 justify-center content-center md:pb-8 pb-4">
+      <h2 class="md:pl-10 pl-0 text-h3-mobile md:text-h3-desktop md:col-span-4 pb-8">Det er nemt at deltage i Superheltedagen</h2>
+      <!-- Image-container 1 -->
+      <div class="flex flex-col items-center justify-between text-center h-full">
+        <img src="/images/support1.svg" alt="" class="w-[150px]" />
+        <p class="bold md:pt-0 pt-4">Donér et valgfrit beløb på Mobilepay 573917</p>
+      </div>
+
+      <!-- Image-container 2 -->
+      <div class="flex flex-col items-center justify-between text-center h-full">
+        <img src="/images/support2.svg" alt="" class="w-[120px]" />
+        <p class="bold pt-4">Hop i heltekappen og del en selfie med #superheltedagen</p>
+      </div>
+
+      <!-- Image-container 3 -->
+      <div class="flex flex-col items-center justify-between text-center h-full">
+        <img src="/images/support3.svg" alt="" class="w-[150px]" />
+        <p class="bold md:pt-0 pt-4">Spred det gode budskab, og inviter dit netværk til at støtte kampagnen</p>
+      </div>
+
+      <!-- Image-container 4 -->
+      <div class="flex flex-col items-center justify-between text-center h-full">
+        <img src="/images/support4.svg" alt="" class="w-[150px]" />
+        <p class="bold md:pt-0 pt-4">Flyv afsted i din kappe mandag den 28. april 2025, og vis din støtte</p>
+      </div>
+    </div>
+  </section>
+  <section class="image-section mx-auto grid grid-cols-12">
+    <div class="col-span-12 w-full h-screen">
+      <img src="/images/work_section.webp" alt="" class="w-full h-full object-cover" />
+    </div>
+  </section>
+  <section class="work-section mx-auto md:px-12 px-8 md:py-12 py-8 grid grid-cols-12">
+    <div class="col-span-12 grid md:grid-cols-2 grid-cols-1 md:gap-20 gap-16 items-center justify-center md:pb-8 pb-4">
+      <div>
+        <h2 class="md:pb-8 pb-4 max-w-[25rem] text-gray-50">Deltag som virksomhed</h2>
+        <h3 class="text-turquoise-300">Sæt fokus på social ansvarlighed blandt medarbejdere og kolleger</h3>
+        <div class="btn_container md:pt-12 pt-10">
+          <a href="https://form.jotform.com/243123026664349" target="_blank">
+            <Button variant="secondary" size="large">Tilmeld din virksomhed nu</Button>
+          </a>
+        </div>
+      </div>
+      <div>
+        <p class="text-gray-50">
+          På Superheltedagen den 28. april 2025 hopper virksomheder over hele landet i heltekapper for at skabe glæde og fællesskab&mdash; og for at
+          gøre en forskel.
+          <br /><br />
+          Alle virksomheder, der deltager i Superheltedagen, forpligter sig til at samle midler ind til Legeheltene og Kreaheltenes arbejde for børn med
+          livstruende sygdomme i Danmark.
+          <br /><br />
+          Ved at deltage støtter I ikke bare den vigtige sag, men I skaber også et stærkt sammenhold og en meningsfuld tradition i jeres virksomhed.
+          <br /><br />
+          Hop i heltekappen og vær med til at fejre de små helte, der kæmper hver dag!
+        </p>
+      </div>
+    </div>
+  </section>
+  <style>
+    @keyframes float {
+      0% {
+        transform: translatey(0);
+      }
+      50% {
+        transform: translatey(-10px);
+      }
+      100% {
+        transform: translatey(0);
+      }
     }
-    50% {
-      transform: translatey(-10px);
+    .float {
+      animation: float 3s ease-in-out infinite;
     }
-    100% {
-      transform: translatey(0);
+
+    body {
+      background-color: #333;
     }
-  }
-  .float {
-    animation: float 3s ease-in-out infinite;
-  }
 
-  body {
-    background-color: #333;
-  }
+    /* Slider */
+    .slider img {
+      width: 20rem;
+      height: fit-content;
+    }
 
-  /* Slider */
-  .slider img {
-    width: 20rem;
-    height: fit-content;
-  }
-
-  .slider {
-    padding: 10px;
-    overflow: hidden;
-  }
-
-  .slider-section h2 {
-    color: #f6f6f6;
-  }
-
-  @media screen and (max-width: 768px) {
     .slider {
       padding: 10px;
+      overflow: hidden;
+    }
+
+    .slider-section h2 {
+      color: #f6f6f6;
+    }
+
+    .slider {
+      padding: 3.5px;
       overflow: hidden;
       width: 100vw;
     }
@@ -205,38 +285,63 @@ import Button from "../components/Button.astro";
     .slider img {
       width: 10rem;
       height: auto;
-      object-fit: cover; /* Ensures images maintain aspect ratio */
+      object-fit: cover;
     }
 
     .slide-track {
       display: flex;
       gap: 3em;
-      width: calc(100% * 11); /* Adjusted for proper image spacing */
-      animation: scroll 120s linear infinite;
+      width: calc(100% * 16); /* Increased to accommodate for duplicate slides */
+      animation: scroll 180s linear infinite;
     }
-  }
 
-  .slide-track {
-    display: flex;
-    gap: 3em;
-    width: calc(100% * 11);
-    animation: scroll 120s linear infinite;
-  }
-
-  .slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0 0 10rem; /* Ensures no extra spacing */
-  }
-
-  /* Scrolling animation */
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
+    .slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 10rem; /* Ensures no extra spacing */
     }
-    100% {
-      transform: translateX(-50%);
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      99.9% {
+        transform: translateX(-50%); /* Smooth transition before restarting */
+      }
+      100% {
+        transform: translateX(0); /* Resets back to the start */
+      }
     }
-  }
-</style>
+
+    @media screen and (max-width: 768px) {
+      .slider {
+        padding-bottom: 10px;
+        overflow: hidden;
+        width: 100vw;
+      }
+
+      .slide-track {
+        display: flex;
+        gap: 3em;
+        width: calc(100% * 16); /* Same as above */
+        animation: scroll 100s linear infinite;
+      }
+
+      .slider img {
+        width: 10rem;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+
+    .support-section h2,
+    .support-section p {
+      color: #90cfd4;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+  </style>
+</MainLayout>
