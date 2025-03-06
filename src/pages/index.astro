@@ -5,10 +5,22 @@ import Button from "../components/Button.astro";
 
 <MainLayout title="Superheltedagen">
   <section class="top-section grid grid-cols-12 md:mt-desktop-top mt-mobil-top md:mb-desktop-bottom mb-mobil-bottom">
-    <div class="hero-section col-span-12 flex flex-row items-center justify-center content-center">
-      <div class="md:pt-8 pt-4 flex md:flex-row flex-col md:items-start items-center md:gap-32 gap-16">
-        <img src="/images/hero_element.webp" alt="hero-element for superheltedagen" class="md:pt-12 w-[400px] md:w-[700px]" />
-        <img src="/images/superhero.webp" alt="superhelte-dreng" class="w-[250px] md:w-[400px]" />
+    <div class="hero-section col-span-12 flex flex-row items-center justify-center content-center relative">
+      <div class="md:pt-8 pt-4 flex md:flex-row flex-col md:items-start items-center md:gap-32 gap-16 relative">
+        <img src="/images/hero_element.webp" alt="hero-element for superheltedagen" class="hero_element md:pt-12 w-[400px] md:w-[700px]" />
+
+        <!-- Splash Circle -->
+        <div
+          class="circle hidden md:block absolute w-[300px] md:w-[250px] h-[300px] md:h-[250px] bg-rose-700 rounded-full -z-10 md:left-[63.5rem] left-[20rem]"
+        >
+          <p
+            class="font-satoshi-bold md:text-h4-mobile text-h4-desktop text-gray-50 absolute text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40"
+          >
+            Send din støtte via MobilePay: <em class="underline">573917</em>
+          </p>
+        </div>
+
+        <img src="/images/superhero.webp" alt="superhelte-dreng" class="superhero w-[250px] md:w-[400px] relative" />
       </div>
     </div>
     <div class="absolute bottom-[-20%] md:bottom-[-10%] w-full flex justify-center z-[30]">
@@ -183,7 +195,7 @@ import Button from "../components/Button.astro";
   </section>
 
   <section class="support-section mx-auto md:px-12 px-8 md:py-12 py-8 grid grid-cols-12">
-    <div class="col-span-12 grid md:grid-cols-4 grid-cols-1 md:gap-10 gap-16 justify-center content-center md:pb-8 pb-4">
+    <div class="support-container col-span-12 grid md:grid-cols-4 grid-cols-1 md:gap-10 gap-16 justify-center content-center md:pb-8 pb-4">
       <h2 class="md:pl-10 pl-0 text-h3-mobile md:text-h3-desktop md:col-span-4 pb-8">Det er nemt at deltage i Superheltedagen</h2>
       <!-- Image-container 1 -->
       <div class="flex flex-col items-center justify-between text-center h-full">
@@ -344,4 +356,99 @@ import Button from "../components/Button.astro";
       font-weight: bold;
     }
   </style>
+
+  <script>
+    import { inView } from "motion";
+
+    /* inView Animations */
+
+    /* Hero Section */
+    const elementmedanimation1 = document.querySelector(".hero_element");
+    inView(elementmedanimation1, () => {
+      elementmedanimation1.classList.add("animate__animated", "animate__bounceInLeft");
+    });
+
+    const elementmedanimation2 = document.querySelector(".superhero");
+    inView(elementmedanimation2, () => {
+      elementmedanimation2.classList.add("animate__animated", "animate__bounceInDown");
+    });
+
+    const elementmedanimation3 = document.querySelector(".circle");
+    inView(elementmedanimation3, () => {
+      elementmedanimation3.classList.add("animate__animated", "animate__rotateInDownRight");
+    });
+
+    /* Middle Section */
+    const elementmedanimation4 = document.querySelector(".middle-section img");
+    inView(elementmedanimation4, () => {
+      elementmedanimation4.classList.add("animate__animated", "animate__fadeInLeft");
+    });
+
+    const elementmedanimation5 = document.querySelector(".middle-section p");
+    inView(elementmedanimation5, () => {
+      elementmedanimation5.classList.add("animate__animated", "animate__fadeInRight");
+    });
+
+    const elementmedanimation6 = document.querySelector(".middle-section h2");
+    inView(elementmedanimation6, () => {
+      elementmedanimation6.classList.add("animate__animated", "animate__fadeInRight");
+    });
+
+    /* Charity Section */
+    const elementmedanimation7 = document.querySelector(".charity-section h2");
+    inView(elementmedanimation7, () => {
+      elementmedanimation7.classList.add("animate__animated", "animate__fadeInLeft");
+    });
+
+    const elementmedanimation8 = document.querySelector(".charity-section h3");
+    inView(elementmedanimation8, () => {
+      elementmedanimation8.classList.add("animate__animated", "animate__fadeInLeft");
+    });
+
+    const elementmedanimation8a = document.querySelector(".charity-section .btn_container");
+    inView(elementmedanimation8a, () => {
+      elementmedanimation8a.classList.add("animate__animated", "animate__fadeInLeft");
+    });
+
+    const elementmedanimation9 = document.querySelector(".charity-section p");
+    inView(elementmedanimation9, () => {
+      elementmedanimation9.classList.add("animate__animated", "animate__fadeInRight");
+    });
+
+    /* Support Section */
+    const support = document.querySelectorAll(".support-container > div");
+
+    support.forEach((supports, index) => {
+      inView(supports, () => {
+        supports.style.animationDelay = `${index * 400}ms`; // Ensure delay is set before animation
+        supports.classList.add("animate__animated", "animate__fadeInUp");
+      });
+    });
+
+    const elemntmedanimation10 = document.querySelector(".support-section h2");
+    inView(elemntmedanimation10, () => {
+      elemntmedanimation10.classList.add("animate__animated", "animate__fadeInLeft");
+    });
+
+    /* Work Section */
+    const elemntmedanimation11 = document.querySelector(".work-section h2");
+    inView(elemntmedanimation11, () => {
+      elemntmedanimation11.classList.add("animate__animated", "animate__fadeInLeft");
+    });
+
+    const elemntmedanimation11a = document.querySelector(".work-section h3");
+    inView(elemntmedanimation11a, () => {
+      elemntmedanimation11a.classList.add("animate__animated", "animate__fadeInLeft");
+    });
+
+    const elemntmedanimation11b = document.querySelector(".work-section .btn_container");
+    inView(elemntmedanimation11b, () => {
+      elemntmedanimation11b.classList.add("animate__animated", "animate__fadeInLeft");
+    });
+
+    const elemntmedanimation12 = document.querySelector(".work-section p");
+    inView(elemntmedanimation12, () => {
+      elemntmedanimation12.classList.add("animate__animated", "animate__fadeInRight");
+    });
+  </script>
 </MainLayout>
