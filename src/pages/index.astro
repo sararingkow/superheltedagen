@@ -6,15 +6,15 @@ import Button from "../components/Button.astro";
 <MainLayout title="Superheltedagen">
   <section class="top-section grid grid-cols-12 md:mt-desktop-top mt-mobil-top md:mb-desktop-bottom mb-mobil-bottom">
     <div class="hero-section col-span-12 flex flex-row items-center justify-center content-center relative">
-      <div class="md:pt-8 pt-4 flex md:flex-row flex-col md:items-start items-center md:gap-32 gap-16 relative">
-        <img src="/images/hero_element.webp" alt="hero-element for superheltedagen" class="hero_element md:pt-12 w-[400px] md:w-[700px]" />
+      <div class="flex md:flex-row flex-col md:items-start items-center md:gap-32 gap-16 relative">
+        <img src="/images/hero_element.webp" alt="hero-element for superheltedagen" class="hero_element md:pt-20 pt-12 w-[400px] md:w-[700px]" />
 
         <!-- Splash Circle -->
         <div
-          class="circle hidden md:block absolute w-[300px] md:w-[250px] h-[300px] md:h-[250px] bg-rose-700 rounded-full -z-10 md:left-[63.5rem] left-[20rem]"
+          class="circle absolute w-[150px] md:w-[250px] h-[150px] md:h-[250px] bg-rose-700 rounded-full -z-10 md:left-[63.5rem] left-[11.5rem] md:top-[2rem] top-[25rem]"
         >
           <p
-            class="font-satoshi-bold md:text-h4-mobile text-h4-desktop text-gray-50 absolute text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40"
+            class="font-satoshi-bold md:text-h4-mobile text-p-mobile text-gray-50 absolute text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40"
           >
             Send din støtte via MobilePay: <em class="underline">573917</em>
           </p>
@@ -23,7 +23,7 @@ import Button from "../components/Button.astro";
         <img src="/images/superhero.webp" alt="superhelte-dreng" class="superhero w-[250px] md:w-[400px] relative" />
       </div>
     </div>
-    <div class="absolute bottom-[-20%] md:bottom-[-10%] w-full flex justify-center z-[30]">
+    <div class="absolute bottom-[-20%] md:bottom-[-5%] w-full flex justify-center z-[30]">
       <a href="#about">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -41,14 +41,17 @@ import Button from "../components/Button.astro";
   <div class="line1 col-span-12">
     <img src="/images/line.webp" alt="sektionslinje" class="w-full h-[10px]" />
   </div>
-  <section class="middle-section h-full p-8 bg-turquoise-300 grid grid-cols-12">
+  <section
+    id="about"
+    class="middle-section px-8 py-8 bg-turquoise-300 opacity-0 transition-opacity duration-500 ease-in-out will-change-[opacity, transform]"
+  >
     <div class="col-span-12 flex md:flex-row flex-col items-center justify-center">
       <img
         src="/images/section1_image.webp"
         alt="billede til første tekst-sektion"
-        class="rounded-full w-[300px] h-[300px] md:w-[400px] md:h-[400px] object-cover"
+        class="middle-image rounded-full w-[300px] h-[300px] md:w-[400px] md:h-[400px] object-cover"
       />
-      <div class="flex flex-col md:ml-10">
+      <div class="text-container flex flex-col md:ml-10">
         <h2 class="text-h3-mobile md:text-h3-desktop md:pb-8 pb-4 md:pt-0 pt-12">
           Bliv en del af Superheltedagen, hvor vi samler ind til børn med livstruende sygdomme som kræft og hjertesygdomme
         </h2>
@@ -62,7 +65,9 @@ import Button from "../components/Button.astro";
     </div>
   </section>
   <section class="slider-section mx-auto grid grid-cols-12">
-    <h2 class="pl-8 md:text-left col-span-12 text-h3-mobile md:text-h3-desktop md:pb-2 pb-4 md:pt-12 pt-8">Deltager i Superheltedagen 2025</h2>
+    <h2 class="px-8 text-center md:text-left col-span-12 text-h3-mobile md:text-h3-desktop md:pb-2 pb-4 md:pt-12 pt-8">
+      Deltager i Superheltedagen 2025
+    </h2>
     <div class="slider col-span-12">
       <div class="slide-track col-span-12">
         <div class="slide"><img src="/images/br.webp" alt="" /></div>
@@ -173,7 +178,7 @@ import Button from "../components/Button.astro";
 
   <section class="charity-section mx-auto md:px-12 px-8 md:py-12 py-8 bg-turquoise-300 grid grid-cols-12">
     <div class="col-span-12 grid md:grid-cols-2 grid-cols-1 md:gap-20 gap-16 items-center justify-center">
-      <div>
+      <div class="charity-container1">
         <h2 class="md:pb-8 pb-4 max-w-[25rem]">Det går midlerne fra Superheltedagen 2025 til</h2>
         <h3>Flere børn, som er ramt af livstruende sygdom, der skal have besøg af Legeheltene og Kreaheltene</h3>
         <div class="btn_container md:pt-12 pt-10">
@@ -182,7 +187,7 @@ import Button from "../components/Button.astro";
           </a>
         </div>
       </div>
-      <div>
+      <div class="charity-text">
         <p>
           Det er ubærligt at tænke på, at nogen børn skal herfra, før de har levet deres liv fuldt ud. Derfor afholder vi indsamlingsinitiativet
           Superheltedagen d. 28. april 2025, så flere børn med livstruende eller uhelbredelig sygdom kan få besøg af en helt i eget hjem. <br /><br />
@@ -195,30 +200,39 @@ import Button from "../components/Button.astro";
   </section>
 
   <section class="support-section mx-auto md:px-12 px-8 md:py-12 py-8 grid grid-cols-12">
-    <div class="support-container col-span-12 grid md:grid-cols-4 grid-cols-1 md:gap-10 gap-16 justify-center content-center md:pb-8 pb-4">
-      <h2 class="md:pl-10 pl-0 text-h3-mobile md:text-h3-desktop md:col-span-4 pb-8">Det er nemt at deltage i Superheltedagen</h2>
+    <div class="support-container col-span-12 grid md:grid-cols-4 grid-cols-1 md:gap-10 gap-16 justify-center items-start">
+      <h2 class="text-h3-mobile md:text-h3-desktop md:col-span-4 pb-8">Det er nemt at deltage i Superheltedagen</h2>
+
       <!-- Image-container 1 -->
-      <div class="flex flex-col items-center justify-between text-center h-full">
-        <img src="/images/support1.svg" alt="" class="w-[150px]" />
-        <p class="bold md:pt-0 pt-4">Donér et valgfrit beløb på Mobilepay 573917</p>
+      <div class="flex flex-col items-center text-center h-full">
+        <div class="flex flex-col items-center justify-between gap-gap h-full">
+          <img src="/images/support1.webp" alt="" class="w-[120px] h-[170px] object-cover" />
+          <p class="bold flex-grow min-h-[80px]">Donér et valgfrit beløb på Mobilepay 573917</p>
+        </div>
       </div>
 
       <!-- Image-container 2 -->
-      <div class="flex flex-col items-center justify-between text-center h-full">
-        <img src="/images/support2.svg" alt="" class="w-[120px]" />
-        <p class="bold pt-4">Hop i heltekappen og del en selfie med #superheltedagen</p>
+      <div class="flex flex-col items-center text-center h-full">
+        <div class="flex flex-col items-center justify-between gap-gap h-full">
+          <img src="/images/support2.webp" alt="" class="w-[160px] h-[170px] object-cover" />
+          <p class="bold flex-grow min-h-[80px]">Hop i heltekappen og del en selfie med #superheltedagen</p>
+        </div>
       </div>
 
       <!-- Image-container 3 -->
-      <div class="flex flex-col items-center justify-between text-center h-full">
-        <img src="/images/support3.svg" alt="" class="w-[150px]" />
-        <p class="bold md:pt-0 pt-4">Spred det gode budskab, og inviter dit netværk til at støtte kampagnen</p>
+      <div class="flex flex-col items-center text-center h-full">
+        <div class="flex flex-col items-center justify-between gap-gap h-full">
+          <img src="/images/support3.webp" alt="" class="w-[170px] h-[170px] object-cover" />
+          <p class="bold flex-grow min-h-[80px]">Spred det gode budskab, og inviter dit netværk til at støtte kampagnen</p>
+        </div>
       </div>
 
       <!-- Image-container 4 -->
-      <div class="flex flex-col items-center justify-between text-center h-full">
-        <img src="/images/support4.svg" alt="" class="w-[150px]" />
-        <p class="bold md:pt-0 pt-4">Flyv afsted i din kappe mandag den 28. april 2025, og vis din støtte</p>
+      <div class="flex flex-col items-center text-center h-full">
+        <div class="flex flex-col items-center justify-between gap-gap h-full">
+          <img src="/images/support4.webp" alt="" class="w-[210px] h-[170px] object-cover" />
+          <p class="bold flex-grow min-h-[80px]">Flyv afsted i din kappe mandag den 28. april 2025, og vis din støtte</p>
+        </div>
       </div>
     </div>
   </section>
@@ -228,8 +242,8 @@ import Button from "../components/Button.astro";
     </div>
   </section>
   <section class="work-section mx-auto md:px-12 px-8 md:py-12 py-8 grid grid-cols-12">
-    <div class="col-span-12 grid md:grid-cols-2 grid-cols-1 md:gap-20 gap-16 items-center justify-center md:pb-8 pb-4">
-      <div>
+    <div class="work-container col-span-12 grid md:grid-cols-2 grid-cols-1 md:gap-20 gap-16 items-center justify-center md:pb-8 pb-4">
+      <div class="work-text1">
         <h2 class="md:pb-8 pb-4 max-w-[25rem] text-gray-50">Deltag som virksomhed</h2>
         <h3 class="text-turquoise-300">Sæt fokus på social ansvarlighed blandt medarbejdere og kolleger</h3>
         <div class="btn_container md:pt-12 pt-10">
@@ -238,7 +252,7 @@ import Button from "../components/Button.astro";
           </a>
         </div>
       </div>
-      <div>
+      <div class="work-text2">
         <p class="text-gray-50">
           På Superheltedagen den 28. april 2025 hopper virksomheder over hele landet i heltekapper for at skabe glæde og fællesskab&mdash; og for at
           gøre en forskel.
@@ -253,6 +267,7 @@ import Button from "../components/Button.astro";
       </div>
     </div>
   </section>
+
   <style>
     @keyframes float {
       0% {
@@ -355,6 +370,10 @@ import Button from "../components/Button.astro";
     .bold {
       font-weight: bold;
     }
+
+    .hero-section {
+      min-height: 60vh;
+    }
   </style>
 
   <script>
@@ -379,40 +398,25 @@ import Button from "../components/Button.astro";
     });
 
     /* Middle Section */
-    const elementmedanimation4 = document.querySelector(".middle-section img");
+    const elementmedanimation4 = document.querySelector(".middle-image");
     inView(elementmedanimation4, () => {
       elementmedanimation4.classList.add("animate__animated", "animate__fadeInLeft");
     });
 
-    const elementmedanimation5 = document.querySelector(".middle-section p");
+    const elementmedanimation5 = document.querySelector(".middle-section .text-container");
     inView(elementmedanimation5, () => {
       elementmedanimation5.classList.add("animate__animated", "animate__fadeInRight");
     });
 
-    const elementmedanimation6 = document.querySelector(".middle-section h2");
-    inView(elementmedanimation6, () => {
-      elementmedanimation6.classList.add("animate__animated", "animate__fadeInRight");
-    });
-
     /* Charity Section */
-    const elementmedanimation7 = document.querySelector(".charity-section h2");
+    const elementmedanimation7 = document.querySelector(".charity-container1");
     inView(elementmedanimation7, () => {
       elementmedanimation7.classList.add("animate__animated", "animate__fadeInLeft");
     });
 
-    const elementmedanimation8 = document.querySelector(".charity-section h3");
+    const elementmedanimation8 = document.querySelector(".charity-text");
     inView(elementmedanimation8, () => {
-      elementmedanimation8.classList.add("animate__animated", "animate__fadeInLeft");
-    });
-
-    const elementmedanimation8a = document.querySelector(".charity-section .btn_container");
-    inView(elementmedanimation8a, () => {
-      elementmedanimation8a.classList.add("animate__animated", "animate__fadeInLeft");
-    });
-
-    const elementmedanimation9 = document.querySelector(".charity-section p");
-    inView(elementmedanimation9, () => {
-      elementmedanimation9.classList.add("animate__animated", "animate__fadeInRight");
+      elementmedanimation8.classList.add("animate__animated", "animate__fadeInRight");
     });
 
     /* Support Section */
@@ -431,14 +435,9 @@ import Button from "../components/Button.astro";
     });
 
     /* Work Section */
-    const elemntmedanimation11 = document.querySelector(".work-section h2");
+    const elemntmedanimation11 = document.querySelector(".work-text1");
     inView(elemntmedanimation11, () => {
       elemntmedanimation11.classList.add("animate__animated", "animate__fadeInLeft");
-    });
-
-    const elemntmedanimation11a = document.querySelector(".work-section h3");
-    inView(elemntmedanimation11a, () => {
-      elemntmedanimation11a.classList.add("animate__animated", "animate__fadeInLeft");
     });
 
     const elemntmedanimation11b = document.querySelector(".work-section .btn_container");
@@ -446,9 +445,38 @@ import Button from "../components/Button.astro";
       elemntmedanimation11b.classList.add("animate__animated", "animate__fadeInLeft");
     });
 
-    const elemntmedanimation12 = document.querySelector(".work-section p");
+    const elemntmedanimation12 = document.querySelector(".work-text2");
     inView(elemntmedanimation12, () => {
       elemntmedanimation12.classList.add("animate__animated", "animate__fadeInRight");
+    });
+
+    /* Image Section */
+    const elemntmedanimation12b = document.querySelector(".image-section");
+    inView(elemntmedanimation12b, () => {
+      elemntmedanimation12b.classList.add("animate__animated", "animate__fadeIn");
+    });
+
+    /* Slider Section */
+    const elemntmedanimation13 = document.querySelector(".slider");
+    inView(elemntmedanimation13, () => {
+      elemntmedanimation13.classList.add("animate__animated", "animate__zoomIn");
+    });
+
+    const elemntmedanimation14 = document.querySelector(".slider-section h2");
+    inView(elemntmedanimation14, () => {
+      elemntmedanimation14.classList.add("animate__animated", "animate__slideInLeft");
+    });
+
+    /* Video Section */
+
+    const elemntmedanimation15 = document.querySelector(".video-section iframe");
+    inView(elemntmedanimation15, () => {
+      elemntmedanimation15.classList.add("animate__animated", "animate__fadeIn");
+    });
+
+    /* Misc */
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelector(".middle-section").classList.remove("opacity-0");
     });
   </script>
 </MainLayout>
