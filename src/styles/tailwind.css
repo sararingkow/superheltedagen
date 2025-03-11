@@ -51,10 +51,17 @@
   p {
     @apply font-satoshi-regular text-turquoise-800 text-p-mobile;
   }
+
+  a {
+    @apply font-satoshi-regular text-turquoise-800 text-a-mobile;
+  }
   @screen md {
-    p,
-    a {
+    p {
       @apply text-p-desktop;
+    }
+
+    a {
+      @apply text-a-desktop;
     }
   }
 

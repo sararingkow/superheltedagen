@@ -91,7 +91,7 @@ export default {
       "h4-mobile": ["1.4rem", { lineHeight: "1.875rem" }],
       "p-desktop": ["1.1rem", { lineHeight: "1.875rem" }],
       "p-mobile": ["1.02rem", { lineHeight: "1.5rem" }],
-      "a-desktop": ["1rem", { lineHeight: "1.875rem" }],
+      "a-desktop": ["1.1rem", { lineHeight: "1.875rem" }],
       "a-mobile": ["1.02rem", { lineHeight: "1.5rem" }],
     },
     fontWeight: {
