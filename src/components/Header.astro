@@ -13,12 +13,17 @@ import Button from "../components/Button.astro";
     <div class="flex items-center ml-auto gap-12">
       <!-- Desktop link (aligned next to buttons) -->
       <nav id="desktopmenu" class="hidden lg:block">
-        <ul class="flex">
+        <ul class="flex gap-4">
           <li>
             <a
               href="https://børneulykkesfonden.dk/forside"
               target="_blank"
               class="text-gray-50 hover:text-turquoise-300 hover:underline transition duration-300 ease-in-out">Gå til Børneulykkesfonden</a
+            >
+          </li>
+          <li>
+            <a href="#" target="_blank" class="text-gray-50 hover:text-turquoise-300 hover:underline transition duration-300 ease-in-out"
+              >Download materialer</a
             >
           </li>
         </ul>
@@ -83,6 +88,9 @@ import Button from "../components/Button.astro";
           class="hover:text-turquoise-300 hover:underline transition duration-300 ease-in-out">Gå til Børneulykkesfonden</a
         >
       </li>
+      <li class="text-gray-50 py-2 border-b border-turquoise-400 border-opacity-50 pt-[16px]">
+        <a href="#" target="_blank" class="hover:text-turquoise-300 hover:underline transition duration-300 ease-in-out">Download materialer</a>
+      </li>
     </ul>
     <div class="btn_container lg:flex gap-4 pt-8 md:pt-0">
       <a href="https://form.jotform.com/243123026664349" target="_blank">
@@ -97,8 +105,8 @@ import Button from "../components/Button.astro";
 
 <style>
   .header {
-    background: rgb(60, 148, 158);
-    background: linear-gradient(-90deg, rgba(60, 148, 158, 1) 0%, rgba(52, 122, 134, 1) 50%, rgba(52, 122, 134, 1) 83%);
+    background: #2bc0cf;
+    background: linear-gradient(-90deg, #2bc0cf 0%, #1c8a9e 50%, #205b6a 83%);
   }
 
   [x-cloak] {

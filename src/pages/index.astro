@@ -7,11 +7,11 @@ import Button from "../components/Button.astro";
   <section class="top-section grid grid-cols-12 md:mt-desktop-top mt-mobil-top md:mb-desktop-bottom mb-mobil-bottom">
     <div class="hero-section col-span-12 flex flex-row items-center justify-center content-center relative">
       <div class="flex md:flex-row flex-col md:items-start items-center md:gap-32 gap-16 relative">
-        <img src="/images/hero_element.webp" alt="hero-element for superheltedagen" class="hero_element md:pt-20 pt-12 w-[400px] md:w-[700px]" />
+        <img src="/images/hero_element.webp" alt="hero-element for superheltedagen" class="hero_element md:pt-16 pt-12 w-[400px] md:w-[700px]" />
 
         <!-- Splash Circle -->
         <div
-          class="circle absolute w-[150px] md:w-[250px] h-[150px] md:h-[250px] bg-rose-700 rounded-full -z-10 md:left-[63.5rem] left-[11.5rem] md:top-[2rem] top-[25rem]"
+          class="circle absolute w-[150px] md:w-[250px] h-[150px] md:h-[250px] bg-rose-500 rounded-full -z-10 md:left-[63.5rem] left-[11.5rem] md:top-[2rem] top-[25rem]"
         >
           <p
             class="font-satoshi-bold md:text-h4-mobile text-p-mobile text-gray-50 absolute text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40"
@@ -20,22 +20,8 @@ import Button from "../components/Button.astro";
           </p>
         </div>
 
-        <img src="/images/superhero.webp" alt="superhelte-dreng" class="superhero w-[250px] md:w-[400px] relative" />
+        <img src="/images/superhero.webp" alt="superhelte-dreng" class="superhero md:pt-5 pt-12 w-[250px] md:w-[400px] relative" />
       </div>
-    </div>
-    <div class="absolute bottom-[-20%] md:bottom-[-5%] w-full flex justify-center z-[30]">
-      <a href="#about">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.8"
-          stroke="currentColor"
-          class="arrow float w-8 h-8 sm:w-12 sm:h-12 text-gray-50 hover:text-turquoise-300 transition duration-300 ease-in-out"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-        </svg>
-      </a>
     </div>
   </section>
   <div class="line1 col-span-12">
@@ -43,7 +29,7 @@ import Button from "../components/Button.astro";
   </div>
   <section
     id="about"
-    class="middle-section px-8 py-8 bg-turquoise-300 opacity-0 transition-opacity duration-500 ease-in-out will-change-[opacity, transform]"
+    class="middle-section px-8 py-10 bg-turquoise-300 opacity-0 transition-opacity duration-500 ease-in-out will-change-[opacity, transform]"
   >
     <div class="col-span-12 flex md:flex-row flex-col items-center justify-center">
       <img
@@ -51,15 +37,14 @@ import Button from "../components/Button.astro";
         alt="billede til første tekst-sektion"
         class="middle-image rounded-full w-[300px] h-[300px] md:w-[400px] md:h-[400px] object-cover"
       />
-      <div class="text-container flex flex-col md:ml-10">
-        <h2 class="text-h3-mobile md:text-h3-desktop md:pb-8 pb-4 md:pt-0 pt-12">
+      <div class="text-container flex flex-col md:ml-24 md:mt-0 mt-8">
+        <h2 class="text-h3-mobile md:text-h3-desktop md:pb-8 pb-4 md:pt-0 pt-8 md:max-w-3xl">
           Bliv en del af Superheltedagen, hvor vi samler ind til børn med livstruende sygdomme som kræft og hjertesygdomme
         </h2>
-        <p>
+        <p class="md:max-w-3xl">
           Den 28. april 2025 er det international superheltedag&mdash; og det fejrer vi selvfølgelig med Superheltedagen, hvor hele Danmark er
-          inviteret med. <br class="md:block hidden" />
-          Superheltedagen er en årlig indsamlingsdag, hvor alle midler går direkte til Legeheltene og Kreaheltenes arbejde for børn med livstruende sygdomme
-          i Danmark.
+          inviteret med. Superheltedagen er en årlig indsamlingsdag, hvor alle midler går direkte til Legeheltene og Kreaheltenes arbejde for børn med
+          livstruende sygdomme i Danmark.
         </p>
       </div>
     </div>
@@ -177,10 +162,10 @@ import Button from "../components/Button.astro";
   </section>
 
   <section class="charity-section mx-auto md:px-12 px-8 md:py-12 py-8 bg-turquoise-300 grid grid-cols-12">
-    <div class="col-span-12 grid md:grid-cols-2 grid-cols-1 md:gap-20 gap-16 items-center justify-center">
+    <div class="col-span-12 grid md:grid-cols-2 grid-cols-1 gap-4 items-center justify-center">
       <div class="charity-container1">
-        <h2 class="md:pb-8 pb-4 max-w-[25rem]">Det går midlerne fra Superheltedagen 2025 til</h2>
-        <h3>Flere børn, som er ramt af livstruende sygdom, der skal have besøg af Legeheltene og Kreaheltene</h3>
+        <h2 class="md:pb-8 pb-4 md:max-w-2xl">Det går midlerne til</h2>
+        <h3 class="md:max-w-xl">Flere børn, som er ramt af livstruende sygdom, der skal have besøg af Legeheltene og Kreaheltene</h3>
         <div class="btn_container md:pt-12 pt-10">
           <a href="https://børneulykkesfonden.dk/heltene/kreaheltene/heltekaravanen" target="_blank">
             <Button variant="primary" size="large">Læs mere om Heltekaravanen</Button>
@@ -188,7 +173,7 @@ import Button from "../components/Button.astro";
         </div>
       </div>
       <div class="charity-text">
-        <p>
+        <p class="md:pt-0 pt-8 md:max-w-2xl">
           Det er ubærligt at tænke på, at nogen børn skal herfra, før de har levet deres liv fuldt ud. Derfor afholder vi indsamlingsinitiativet
           Superheltedagen d. 28. april 2025, så flere børn med livstruende eller uhelbredelig sygdom kan få besøg af en helt i eget hjem. <br /><br />
           Når du fejrer Superheltedagen med os, støtter du vores projekt Heltekaravanen. Heltekaravanen er et tilbud til børn, der er tilknyttet palliationen,
@@ -259,10 +244,9 @@ import Button from "../components/Button.astro";
           <br /><br />
           Alle virksomheder, der deltager i Superheltedagen, forpligter sig til at samle midler ind til Legeheltene og Kreaheltenes arbejde for børn med
           livstruende sygdomme i Danmark.
-          <br /><br />
-          Ved at deltage støtter I ikke bare den vigtige sag, men I skaber også et stærkt sammenhold og en meningsfuld tradition i jeres virksomhed.
-          <br /><br />
-          Hop i heltekappen og vær med til at fejre de små helte, der kæmper hver dag!
+          <br />
+          Ved at deltage støtter I ikke bare den vigtige sag, men I skaber også et stærkt sammenhold og en meningsfuld tradition i jeres virksomhed. Hop
+          i heltekappen og vær med til at fejre de små helte, der kæmper hver dag!
         </p>
       </div>
     </div>
@@ -364,7 +348,7 @@ import Button from "../components/Button.astro";
 
     .support-section h2,
     .support-section p {
-      color: #90cfd4;
+      color: #f6f6f6;
     }
 
     .bold {
