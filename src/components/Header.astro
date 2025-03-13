@@ -3,7 +3,7 @@ import Button from "../components/Button.astro";
 ---
 
 <div x-data="{ showmenu: false }" class="z-50 header fixed mx-auto w-full pt-4 pb-4 md:py-4 md:px-0 px-6 backdrop-blur-sm">
-  <div id="navbar" class="flex flex-row items-center gap-gap md:px-16 mx-auto pt-2 pb-2">
+  <div id="navbar" class="flex flex-row items-center gap-gap md:md:px-16 px-8 mx-auto pt-2 pb-2">
     <!-- Logo (hidden on mobile) -->
     <div x-show="!showmenu">
       <a href="#hero"><img src="/images/logo.webp" alt="logo for legeheltene" class="h-12" /></a>
@@ -22,8 +22,11 @@ import Button from "../components/Button.astro";
             >
           </li>
           <li>
-            <a href="#" target="_blank" class="text-gray-50 hover:text-turquoise-300 hover:underline transition duration-300 ease-in-out"
-              >Download materialer</a
+            <a
+              href="/materialer/superheltedagen_kommunikationspakke.zip"
+              target="_blank"
+              download="superheltedagen_kommunikationspakke.zip"
+              class="text-gray-50 hover:text-turquoise-300 hover:underline transition duration-300 ease-in-out">Download materialer</a
             >
           </li>
         </ul>
@@ -115,5 +118,6 @@ import Button from "../components/Button.astro";
 
   a {
     color: #f6f6f6;
+    font-weight: "satoshi-medium";
   }
 </style>
