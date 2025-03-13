@@ -52,6 +52,8 @@
 </style>
 
 <script>
+  import { inView } from "motion";
+
   document.addEventListener("DOMContentLoaded", function () {
     const track = document.querySelector(".slider-track");
     const slides = Array.from(track.children);
@@ -75,5 +77,13 @@
     }
 
     animate(); // Start animation
+  });
+
+  /* inView Animations */
+
+  /* Slider Section */
+  const elemntmedanimation1 = document.querySelector(".slider-container");
+  inView(elemntmedanimation1, () => {
+    elemntmedanimation1.classList.add("animate__animated", "animate__zoomIn");
   });
 </script>
