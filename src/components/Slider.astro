@@ -54,25 +54,29 @@
 <script>
   import { inView } from "motion";
 
-  /* Slider-looping */
   document.addEventListener("DOMContentLoaded", function () {
     const track = document.querySelector(".slider-track");
     const slides = Array.from(track.children);
 
-    // Clone slides for an infinite effect
+    // Duplicate slides to ensure smooth infinite loop
     slides.forEach((slide) => {
       const clone = slide.cloneNode(true);
       track.appendChild(clone);
     });
 
-    let speed = 2; // Speed of movement (adjust as needed)
+    let speed = 1; // Adjust speed if needed
     let position = 0;
 
     function animate() {
       position -= speed;
-      if (position <= -track.scrollWidth / 2) {
+
+      // Move first slide to the end instead of resetting
+      if (position <= -slides[0].offsetWidth - 32) {
+        // Adjust for gap (2rem = 32px)
         position = 0;
+        track.appendChild(track.firstElementChild);
       }
+
       track.style.transform = `translateX(${position}px)`;
       requestAnimationFrame(animate);
     }

@@ -69,4 +69,14 @@
   .btn_container a {
     @apply font-satoshi-medium text-gray-50 text-[15px];
   }
+
+  #desktopmenu a,
+  #mobilmenu a {
+    @apply font-satoshi-medium text-gray-50;
+  }
+
+  #desktopmenu a:hover,
+  #mobilmenu a:hover {
+    @apply text-turquoise-300;
+  }
 }

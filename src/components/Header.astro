@@ -6,7 +6,9 @@ import Button from "../components/Button.astro";
   <div id="navbar" class="flex flex-row items-center gap-gap md:md:px-16 px-8 mx-auto pt-2 pb-2">
     <!-- Logo (hidden on mobile) -->
     <div x-show="!showmenu">
-      <a href="#hero"><img src="/images/logo.webp" alt="logo for legeheltene" class="h-12" /></a>
+      <a href="#hero"
+        ><img src="/images/logo.webp" alt="logo for legeheltene" class="h-12 hover:-translate-y-[2px] transition duration-300 ease-in-out" /></a
+      >
     </div>
 
     <!-- Right-side container: Link + Buttons -->
@@ -82,7 +84,7 @@ import Button from "../components/Button.astro";
     x-cloak
     x-on:click.outside="showmenu = false"
   >
-    <img src="/images/logo.webp" alt="logo for legeheltene" class="h-16 pb-4 md:pb-0" />
+    <img src="/images/logo.webp" alt="logo for legeheltene" class="h-16 pb-4 md:pb-0 hover:-translate-y-[2px] transition duration-300 ease-in-out" />
     <ul>
       <li class="text-gray-50 py-2 border-b border-turquoise-400 border-opacity-50">
         <a
@@ -114,10 +116,5 @@ import Button from "../components/Button.astro";
 
   [x-cloak] {
     display: none !important;
-  }
-
-  a {
-    color: #f6f6f6;
-    font-weight: "satoshi-medium";
   }
 </style>
