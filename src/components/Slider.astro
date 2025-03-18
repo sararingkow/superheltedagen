@@ -38,16 +38,17 @@
   }
 
   .slide {
-    flex: 0 0 auto;
-    width: 10rem;
+    flex: 0 0 10rem; /* Each slide takes the same width */
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .slide img {
-    width: 10rem;
-    height: auto;
+    width: 10rem; /* Make the image fill the slide width */
+    max-width: 150px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Prevent stretching */
   }
 </style>
 
