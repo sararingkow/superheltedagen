@@ -2,7 +2,7 @@
 
 ---
 
-<div class="slider-container">
+<div class="slider-container pb-4">
   <div class="slider-track">
     <!-- Original slides -->
     <div class="slide"><img src="/images/br.webp" alt="br logo" /></div>
@@ -27,28 +27,30 @@
 <style>
   .slider-container {
     overflow: hidden;
-    width: 100vw;
+    width: 100vw; /* Fit within viewport */
     white-space: nowrap;
+    position: relative;
   }
 
   .slider-track {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
     will-change: transform;
   }
 
   .slide {
-    flex: 0 0 10rem; /* Each slide takes the same width */
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0; /* Prevent shrinking */
   }
 
   .slide img {
-    width: 10rem; /* Make the image fill the slide width */
-    max-width: 150px; /* Adjust as needed */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: contain; /* Prevent stretching */
+    width: auto;
+    max-width: 150px;
+    max-height: 100px;
+    height: auto;
+    object-fit: contain;
   }
 </style>
 
@@ -57,32 +59,34 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     const track = document.querySelector(".slider-track");
-    const slides = Array.from(track.children);
+    let position = 0;
+    let speed = 1; // Adjust speed if needed
 
-    // Duplicate slides to ensure smooth infinite loop
+    // Duplicate slides for seamless effect
+    const slides = Array.from(track.children);
     slides.forEach((slide) => {
       const clone = slide.cloneNode(true);
       track.appendChild(clone);
     });
 
-    let speed = 1; // Adjust speed if needed
-    let position = 0;
-
     function animate() {
       position -= speed;
 
-      // Move first slide to the end instead of resetting
-      if (position <= -slides[0].offsetWidth - 32) {
-        // Adjust for gap (2rem = 32px)
-        position = 0;
-        track.appendChild(track.firstElementChild);
+      // Get the width of the first slide dynamically
+      const firstSlide = track.children[0];
+      const firstSlideWidth = firstSlide.offsetWidth + 48; // Adjust for 3rem gap
+
+      // Check when first slide moves out of view
+      if (position <= -firstSlideWidth) {
+        position += firstSlideWidth;
+        track.appendChild(firstSlide); // Move first slide to the end
       }
 
       track.style.transform = `translateX(${position}px)`;
       requestAnimationFrame(animate);
     }
 
-    animate(); // Start animation
+    animate();
   });
 
   /* inView Animations */
