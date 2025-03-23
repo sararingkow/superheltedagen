@@ -9,7 +9,7 @@
   }
   @screen md {
     .display {
-      @apply text-display-desktop;
+      @apply text-turquoise-800 font-satoshi-black text-display-desktop;
     }
   }
 
@@ -21,29 +21,29 @@
     @apply font-satoshi-bold text-turquoise-800;
   }
   h1 {
-    @apply text-h1-mobile;
+    @apply text-h1-mobile font-satoshi-bold;
   }
   h2 {
-    @apply text-h2-mobile;
+    @apply text-h2-mobile font-satoshi-bold;
   }
   h3 {
-    @apply text-h3-mobile;
+    @apply text-h3-mobile font-satoshi-bold;
   }
   h4 {
-    @apply text-h4-mobile;
+    @apply text-h4-mobile font-satoshi-bold;
   }
   @screen md {
     h1 {
-      @apply text-h1-desktop;
+      @apply text-h1-desktop font-satoshi-bold;
     }
     h2 {
-      @apply text-h2-desktop;
+      @apply text-h2-desktop font-satoshi-bold;
     }
     h3 {
-      @apply text-h3-desktop;
+      @apply text-h3-desktop font-satoshi-bold;
     }
     h4 {
-      @apply text-h4-desktop;
+      @apply text-h4-desktop font-satoshi-bold;
     }
   }
 

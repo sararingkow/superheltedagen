@@ -27,6 +27,8 @@
     <div class="slide"><img src="/images/latable.webp" alt="logo for La Table" /></div>
     <div class="slide"><img src="/images/levi.webp" alt="logo for Levi" /></div>
     <div class="slide"><img src="/images/mash.webp" alt="logo for Mash" /></div>
+    <div class="slide"><img src="/images/nf.webp" alt="logo for Nordisk Film" /></div>
+    <div class="slide"><img src="/images/danskebank.webp" alt="logo for Danske Bank" /></div>
   </div>
 </div>
 
@@ -40,7 +42,7 @@
 
   .slider-track {
     display: flex;
-    gap: 3rem;
+    gap: 2.5rem;
     will-change: transform;
   }
 
@@ -80,7 +82,7 @@
 
       // Get the width of the first slide dynamically
       const firstSlide = track.children[0];
-      const firstSlideWidth = firstSlide.offsetWidth + 48; // Adjust for 3rem gap
+      const firstSlideWidth = firstSlide.offsetWidth + 40; // Adjust for 3rem gap
 
       // Check when first slide moves out of view
       if (position <= -firstSlideWidth) {
